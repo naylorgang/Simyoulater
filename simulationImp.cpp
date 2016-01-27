@@ -41,21 +41,28 @@ void customerType::incrementWaitingTime()
 void customerType::setWaitingTime(int time)
 {
     waitingTime = time;
+    //cout << "See Programming Exercise 17 at the end of this chapter." << endl;
 }
 
 int customerType::getArrivalTime() const
 {
     return arrivalTime;
+    //cout << "See Programming Exercise 17 at the end of this chapter." << endl;
+    return 0;
 }
 
 int customerType::getTransactionTime() const
 {
     return transactionTime;
+    //cout << "See Programming Exercise 17 at the end of this chapter." << endl;
+    return 0;
 }
 
 int customerType::getCustomerNumber() const
 {
     return customerNumber;
+    //cout << "See Programming Exercise 17 at the end of this chapter." << endl;
+    return 0;
 }
 //**************** serverType **********
 
@@ -101,36 +108,42 @@ void serverType::decreaseTransactionTime()
 
 int serverType::getRemainingTransactionTime() const
 {
-    cout << "See Programming Exercise 17 at the end of this chapter." << endl;
+    return transactionTime;
+    //cout << "See Programming Exercise 17 at the end of this chapter." << endl;
     return 0;
 }
 
 void serverType::setCurrentCustomer(customerType cCustomer)
 {
-    cout << "See Programming Exercise 17 at the end of this chapter." << endl;
+    currentCustomer = cCustomer;
+    //cout << "See Programming Exercise 17 at the end of this chapter." << endl;
 }
 
 int serverType::getCurrentCustomerNumber() const
 {
-    cout << "See Programming Exercise 17 at the end of this chapter." << endl;
+    return currentCustomer.getCustomerNumber();
+    //cout << "See Programming Exercise 17 at the end of this chapter." << endl;
     return 0;
 }
 
 int serverType::getCurrentCustomerArrivalTime() const
 {
-    cout << "See Programming Exercise 17 at the end of this chapter." << endl;
+    return currentCustomer.getArrivalTime();
+    //cout << "See Programming Exercise 17 at the end of this chapter." << endl;
     return 0;
 }
 
 int serverType::getCurrentCustomerWaitingTime() const
 {
-    cout << "See Programming Exercise 17 at the end of this chapter." << endl;
+    return currentCustomer.getWaitingTime();
+    //cout << "See Programming Exercise 17 at the end of this chapter." << endl;
     return 0;
 }
 
 int serverType::getCurrentCustomerTransactionTime() const
 {
-    cout << "See Programming Exercise 17 at the end of this chapter." << endl;
+    return currentCustomer.getTransactionTime();
+    //cout << "See Programming Exercise 17 at the end of this chapter." << endl;
     return 0;
 }
 
