@@ -1,3 +1,4 @@
 # Simyoulater
 queue simulator
-ignore testSimulation.cpp
+
+ignore testSimulationProg.cpp
