@@ -14,6 +14,7 @@ template <class Type>
 class queueType: public queueADT<Type>
 {
 public:
+
     const queueType<Type>& operator=(const queueType<Type>&); 
       //Overload the assignment operator.
 
@@ -76,6 +77,7 @@ private:
     Type *list;       //pointer to the array that holds 
                       //the queue elements 
 };
+
 
 template <class Type>
 bool queueType<Type>::isEmptyQueue() const
