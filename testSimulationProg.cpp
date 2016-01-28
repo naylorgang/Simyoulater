@@ -2,6 +2,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <iomanip>
+#include <cmath>
 
 #include "simulation.h"
 #include "queueAsArray.h" 
@@ -44,8 +45,8 @@ void setSimulationParameters(int& sTime, int& numOfServers,
 
 void runSimulation()
 {
-    cout << "Write the definition of the function runSimulation." << endl;
-    cout << "See programming Exercise 18." << endl;
+    //cout << "Write the definition of the function runSimulation." << endl;
+    //cout << "See programming Exercise 18." << endl;
     
     int sTime;
     int numOfServers;
@@ -63,8 +64,67 @@ void runSimulation()
     int numberOfCustomersLeftInWaitingQueue;
     int numberOfCustomersLeftWithServers;
 
-    //waitingCustomersQueue
-    //list of servers
+    serverListType listOfServers = serverListType(numOfServers);
+    
+    waitingCustomerQueueType waitingCustomerQueue = waitingCustomerQueueType();
+    
+    
+    
+    double randomNumber;
+    srand(time(NULL));
+    
+    double threshhold = exp(-1.0/tBetweenCArrival);
+    
+    
+    for (clock = 1;clock <= sTime; clock++)
+    {
+        listOfServers.updateServers(cout);
+        
+        if (waitingCustomerQueue.isEmptyQueue() == false)
+        {
+            waitingCustomerQueue.updateWaitingQueue();
+        }
+        
+        randomNumber = ((double)rand() / (INT_MAX));
+        
+        if (randomNumber > threshhold)
+        {
+            //cout somthing
+            customerNumber++;
+            
+            customerType newCustomer = customerType(customerNumber,clock,0,transTime);
+            waitingCustomerQueue.addQueue(newCustomer);
+        }
+        
+
+        while (listOfServers.getFreeServerID() != -1  && !waitingCustomerQueue.isEmptyQueue())
+        {
+            
+                customerType sendingCustomer = waitingCustomerQueue.front();
+                listOfServers.setServerBusy(listOfServers.getFreeServerID(),sendingCustomer, transTime);
+                waitingCustomerQueue.deleteQueue();
+            
+            
+            
+        }
+    }
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
