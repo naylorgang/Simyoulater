@@ -1,4 +1,4 @@
- 
+
 #include <iostream>
 #include <cstdlib>
 #include <iomanip>
@@ -46,5 +46,25 @@ void runSimulation()
 {
     cout << "Write the definition of the function runSimulation." << endl;
     cout << "See programming Exercise 18." << endl;
+    
+    int sTime;
+    int numOfServers;
+    int transTime;
+    int tBetweenCArrival;
+    
+    setSimulationParameters(sTime,numOfServers,transTime,tBetweenCArrival);
+    
+    int customerNumber;
+    int clock;
+    int totalWaitingTime;
+    int averageWaitingTime;
+    int numberOfCustomersArrived;
+    int numberOfCustmersServed;
+    int numberOfCustomersLeftInWaitingQueue;
+    int numberOfCustomersLeftWithServers;
+
+    //waitingCustomersQueue
+    //list of servers
+    
 }
 
